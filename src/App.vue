@@ -1,8 +1,8 @@
 <template>
-  <div  class="flex justify-center ">
+  <div class="flex justify-center ">
     <div class="w-1/2">
-      <Modal   />
-      <SearchField />
+      <Modal/>
+      <SearchField/>
       <PackageContainer class="mt-4"/>
       <Pagination/>
     </div>
@@ -24,11 +24,11 @@ export default {
     PackageContainer,
     SearchField
   },
-  methods:{
-    ...mapActions({fetchPackages:'packages/fetchPackages'})
+  methods: {
+    ...mapActions({fetchPackages: 'packages/fetchPackages'})
   },
-  computed:{
-    ...mapGetters({total:'packages/getTotal'})
+  computed: {
+    ...mapGetters({total: 'packages/getTotal'})
   },
   created() {
     this.fetchPackages()

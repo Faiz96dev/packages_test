@@ -17,19 +17,19 @@ export default {
     msg: String
   },
   methods: {
-    ...mapActions({fetchPackages: 'packages/fetchPackages', setSearchField:'packages/setFieldVal'}),
+    ...mapActions({fetchPackages: 'packages/fetchPackages', setSearchField: 'packages/setFieldVal'}),
     getPackages: _.debounce(function () {
       this.fetchPackages()
     }, 1500)
   },
   computed: {
-    ...mapGetters({fieldVal: 'packages/getSearchField', loading:'packages/getLoading'}),
+    ...mapGetters({fieldVal: 'packages/getSearchField', loading: 'packages/getLoading'}),
     searchText: {
       get() {
         return this.fieldVal
       },
       set(val) {
-       this.setSearchField(val)
+        this.setSearchField(val)
       }
     }
   }

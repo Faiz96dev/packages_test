@@ -29,16 +29,16 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "PackageItem",
-  props:{
-    item:{
+  props: {
+    item: {
       type: Object
     }
   },
-  computed:{
-    ...mapGetters({loading:'packages/getLoading'})
+  computed: {
+    ...mapGetters({loading: 'packages/getLoading'})
   },
   methods: {
-    ...mapActions({setShowModal: 'modal/toggleModal', setCurrentPackage:'packages/setCurrentPackage' }),
+    ...mapActions({setShowModal: 'modal/toggleModal', setCurrentPackage: 'packages/setCurrentPackage'}),
     handleItemClick() {
       this.setCurrentPackage(this.item)
     }

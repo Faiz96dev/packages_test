@@ -11,7 +11,7 @@ export default {
         quantity: 10,
         searchField: 'tailwind',
         total: 0,
-        currentPackage:{}
+        currentPackage: {}
     },
     mutations: {
         SET_PACKAGES(state, val) {
@@ -41,9 +41,9 @@ export default {
             commit('SET_SEARCH_VAL', val)
         },
         setCurrentPackage({commit}, val) {
-            if (!val) commit('modal/SET_MODAL', false, { root: true })
+            if (!val) commit('modal/SET_MODAL', false, {root: true})
             commit('SET_CURRENT_PACKAGE', val)
-            commit('modal/SET_MODAL', true, { root: true })
+            commit('modal/SET_MODAL', true, {root: true})
         },
         setPage({commit, dispatch}, val) {
             commit('SET_PAGE', val)

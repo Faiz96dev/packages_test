@@ -14,15 +14,14 @@
               <div class="flex">
                 <p>Repository:</p> <a
                   :href="currentPackage.package.links.repository">{{ currentPackage.package.links.repository }}</a>
-
               </div>
             </div>
             <div class="my-3 my-3"><p>Description:</p> <span v-html="currentPackage.package.description"></span></div>
             <div class="my-3 flex flex-wrap">
               Keywords:
-                <div class="m-1 bg-gray-400 text-white rounded-lg p-1 " :key="i"
-                     v-for="i in currentPackage.package.keywords">{{ i }}
-                </div>
+              <div class="m-1 bg-gray-400 text-white rounded-lg p-1 " :key="i"
+                   v-for="i in currentPackage.package.keywords">{{ i }}
+              </div>
             </div>
           </div>
           <button @click="toggleModal(false)"
