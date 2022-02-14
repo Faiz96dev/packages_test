@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div  class="flex justify-center ">
+    <div class="w-1/2">
+      <Modal   />
+      <SearchField />
+      <PackageContainer class="mt-4"/>
+      <Pagination/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchField from './components/SearchField.vue'
+import PackageContainer from "@/./components/PackageContainer";
+import Pagination from "@/./components/Pagination";
+import Modal from "@/./components/Modal";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Modal,
+    Pagination,
+    PackageContainer,
+    SearchField
+  },
+  methods:{
+    ...mapActions({fetchPackages:'packages/fetchPackages'})
+  },
+  computed:{
+    ...mapGetters({total:'packages/getTotal'})
+  },
+  created() {
+    this.fetchPackages()
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
